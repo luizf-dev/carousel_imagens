@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Galeria */
+
+.gallery {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery__stream {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+}
+
+.gallery__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 1s all ease;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 5px;
+}
+
+/* Itens */
+
+.gallery__item:nth-child(1) {
+    left: 0;
+    z-index: 1;
+    transform: translateX(-100%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(2) {
+    left: 0;
+    z-index: 2;
+    transform: translateX(-50%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(3) {
+    left: 50%;
+    z-index: 4;
+    transform: translateX(-50%) scale(1);
+  }
+  
+  .gallery__item:nth-child(4) {
+    left: 100%;
+    z-index: 2;
+    transform: translateX(-50%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(n+5) {
+    left: 100%;
+    z-index: 1;
+    transform: scale(.8);
+  }
+
+  /* Backgrounds */
+
+.bg-1 {
+    background-image: url(https://res.cloudinary.com/dm7h7e8xj/image/upload/v1554487589/star-wars-1_kgt8dr.jpg);
+  }
+  
+  .bg-2 {
+    background-image: url(https://res.cloudinary.com/dm7h7e8xj/image/upload/v1554487590/star-wars-2_tgzyxe.jpg);
+
+  }
+  
+  .bg-3 {
+    background-image: url(https://res.cloudinary.com/dm7h7e8xj/image/upload/v1554487591/star-wars-3_bkcmeb.jpg);
+  }
+  
+  .bg-4 {
+    background-image: url(https://res.cloudinary.com/dm7h7e8xj/image/upload/v1554487591/star-wars-4_opgyza.jpg);
+  }
+  
+  .bg-5 {
+    background-image: url(https://res.cloudinary.com/dm7h7e8xj/image/upload/v1554487591/star-wars-5_ulc9tx.jpg);
+  }
+  
+  .bg-6 {
+    background-image: url(https://res.cloudinary.com/dm7h7e8xj/image/upload/v1554487591/star-wars-6_la8whc.jpg);
+  }
+  
+  .bg-7 {
+    background-image: url(https://res.cloudinary.com/dm7h7e8xj/image/upload/v1554487590/star-wars-7_l3fcor.jpg);
+  }
+
+  /* Controles */
+
+.gallery__prev,
+.gallery__next {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  z-index: 4;
+  width: 10%;
+  height: 10%;
+  transform: translateX(-50%) translateY(-50%) scale(.8);
+  cursor: pointer;
+  color: #fff;
+  font-size: 2.5em;
+  text-shadow: 3px 2px 2px #000;
+}
+
+.gallery__prev {
+  left: 5%;
+}
+
+.gallery__next {
+  left: 95%;
+}
+
+/* Sombras */
+
+.gallery:before,
+.gallery:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  z-index: 3;
+}
+
+@media(max-width:850px){
+
+  .gallery{
+    background: #444343;
+  }
+
+  .gallery__item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    transition: 1s all ease;
+    border-radius: 5px;
+  }
+
+  .gallery__prev {
+    left: 7%;
+    font-size: 1.7em;
+  }
+  
+  .gallery__next {
+    left: 93%;
+    font-size: 1.7em;
+  }
+}
+
